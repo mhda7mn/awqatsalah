@@ -6,7 +6,7 @@ function Root() {
 	return (
 		<LocationProvider>
 			<HeroUIProvider>
-				<main className="dark text-foreground bg-background min-h-screen">
+				<main className="text-foreground bg-background min-h-screen">
 					<Outlet />
 				</main>
 			</HeroUIProvider>

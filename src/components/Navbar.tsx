@@ -5,6 +5,7 @@ import {
 	NavbarItem,
 } from "@heroui/react";
 import NavbarModal from "./NavbarModal";
+import ThemeChange from "./ThemeChange";
 
 const NavbarComponent = () => {
 	return (
@@ -18,7 +19,9 @@ const NavbarComponent = () => {
 				<NavbarModal />
 			</NavbarContent>
 			<NavbarContent justify="end">
-				<NavbarItem>Theme</NavbarItem>
+				<NavbarItem>
+					<ThemeChange />
+				</NavbarItem>
 			</NavbarContent>
 		</Navbar>
 	);
