@@ -12,7 +12,7 @@ export const MethodProvider = ({
 }) => {
 	const [selectedMethod, setSelectedMethod] = useState<MethodKey>(3);
 	const methodName = PRAYER_METHODS[selectedMethod];
-
+	console.log(methodName, selectedMethod);
 	return (
 		<MethodContext.Provider
 			value={{ selectedMethod, setSelectedMethod, methodName }}>
