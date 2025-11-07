@@ -43,10 +43,10 @@ const PrayerTimeCard = ({
 			<CardBody className="flex flex-col items-center text-center justify-center">
 				<div className="p-3">
 					<h1 className="text-lg pb-3">Prayer Times</h1>
-					<div className="grid grid-cols-5 items-center text-center gap-3">
+					<div className="flex flex-wrap md:flex-nowrap justify-center gap-3 text-center">
 						{prayerTimes.map((val, i) => (
 							<div
-								className="flex flex-col items-center text-center p-3 border border-default-500 rounded-md"
+								className="flex flex-col items-center text-center p-3 border border-default-500 rounded-md w-[45%] md:w-1/5"
 								key={i}>
 								<p>{val.key}</p>
 								<p>{val.label}</p>
@@ -56,7 +56,7 @@ const PrayerTimeCard = ({
 				</div>
 				<Divider />
 				<div className="p-3">
-					<div className="grid grid-cols-4 items-center text-center gap-3">
+					<div className="grid  grid-cols-2 md:grid-cols-4 items-center text-center gap-3">
 						{otherTimes.map((val, i) => (
 							<div
 								className="flex flex-col items-center text-center p-3 border border-default-500 rounded-md"

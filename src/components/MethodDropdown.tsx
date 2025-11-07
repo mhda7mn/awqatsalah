@@ -17,6 +17,7 @@ const MethodDropdown = () => {
 				{Object.entries(PRAYER_METHODS).map(([key, name]) => (
 					<SelectItem
 						key={key}
+						className="text-foreground"
 						onClick={() =>
 							setSelectedMethod(Number(key) as MethodKey)
 						}>
