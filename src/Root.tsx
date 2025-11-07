@@ -1,13 +1,16 @@
 import { HeroUIProvider } from "@heroui/react";
 import { Outlet } from "react-router";
+import { LocationProvider } from "./hooks/LocationProvider";
 
 function Root() {
 	return (
-		<HeroUIProvider>
-			<main className="dark text-foreground bg-background min-h-screen">
-				<Outlet />
-			</main>
-		</HeroUIProvider>
+		<LocationProvider>
+			<HeroUIProvider>
+				<main className="dark text-foreground bg-background min-h-screen">
+					<Outlet />
+				</main>
+			</HeroUIProvider>
+		</LocationProvider>
 	);
 }
 

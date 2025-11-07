@@ -14,7 +14,7 @@ const geoCodingIP = async () => {
 			latitude: data.data.latitude,
 			longitude: data.data.longitude,
 		},
-		timezone: data.data.timezone,
+		timezone: data.data.timezone.time_zone,
 		flag: data.data.flag.flag_Icon,
 		connection: {
 			org: data.data.connection.org,
