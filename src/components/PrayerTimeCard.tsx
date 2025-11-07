@@ -1,4 +1,10 @@
-import { Card, CardHeader, CardBody, Divider } from "@heroui/react";
+import {
+	Card,
+	CardHeader,
+	CardBody,
+	Divider,
+	Skeleton,
+} from "@heroui/react";
 import type { PrayerDataState } from "../types/prayer.types";
 
 const PrayerTimeCard = ({
@@ -9,7 +15,50 @@ const PrayerTimeCard = ({
 	loading: boolean;
 }) => {
 	if (loading) {
-		return <p>loading...</p>;
+		return (
+			<Card className="max-w-xl p-3">
+				<CardHeader className="grid grid-cols-3 items-center text-center gap-3">
+					<div className="flex flex-col gap-1">
+						<Skeleton className="h-5 w-16 rounded-md" />
+						<Skeleton className="h-5 w-12 rounded-md" />
+					</div>
+					<Skeleton className="h-9 w-32 rounded-md mx-auto" />
+					<div className="flex flex-col gap-1">
+						<Skeleton className="h-5 w-16 rounded-md" />
+						<Skeleton className="h-5 w-12 rounded-md" />
+					</div>
+				</CardHeader>
+				<Divider />
+				<CardBody className="flex flex-col items-center text-center justify-center">
+					<div className="p-3 w-full">
+						<Skeleton className="h-6 w-32 mx-auto mb-3 rounded-md" />
+						<div className="flex flex-wrap md:flex-nowrap justify-center gap-3">
+							{[...Array(5)].map((_, i) => (
+								<div
+									key={i}
+									className="flex flex-col items-center p-3 border border-default-500 rounded-md w-[45%] md:w-1/5 gap-2">
+									<Skeleton className="h-4 w-12 rounded-md" />
+									<Skeleton className="h-5 w-16 rounded-md" />
+								</div>
+							))}
+						</div>
+					</div>
+					<Divider />
+					<div className="p-3 w-full">
+						<div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+							{[...Array(4)].map((_, i) => (
+								<div
+									key={i}
+									className="flex flex-col items-center p-3 border border-default-500 rounded-md gap-2">
+									<Skeleton className="h-4 w-20 rounded-md" />
+									<Skeleton className="h-5 w-16 rounded-md" />
+								</div>
+							))}
+						</div>
+					</div>
+				</CardBody>
+			</Card>
+		);
 	}
 
 	const prayerTimes = [
