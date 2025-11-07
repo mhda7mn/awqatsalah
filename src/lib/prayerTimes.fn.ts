@@ -6,7 +6,9 @@ const fetchPrayerTimes = async (
 	method: number
 ) => {
 	const response = await fetch(
-		`https://islamicapi.com/api/v1/prayer-time/?lat=${lat}&lon=${long}&method=${method}&api_key=`
+		`https://islamicapi.com/api/v1/prayer-time/?lat=${lat}&lon=${long}&method=${method}&api_key=${
+			import.meta.env.VITE_API_KEY
+		}`
 	);
 
 	const data: RootPrayerObject = await response.json();
