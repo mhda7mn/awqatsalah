@@ -4,6 +4,12 @@ export interface RootPrayerObject {
 	data: Data;
 }
 
+export interface PrayerDataState {
+	prayerTimes: Times;
+	date: Date;
+	prohibitedTimes: Prohibitedtimes;
+}
+
 interface Data {
 	times: Times;
 	date: Date;

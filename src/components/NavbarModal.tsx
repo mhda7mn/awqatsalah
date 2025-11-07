@@ -9,6 +9,7 @@ import {
 } from "@heroui/react";
 import { useIP } from "../hooks/useIP";
 import { Loader2 } from "lucide-react";
+import MethodDropdown from "./MethodDropdown";
 
 const NavbarModal = () => {
 	const { isOpen, onOpen, onOpenChange } = useDisclosure();
@@ -36,7 +37,7 @@ const NavbarModal = () => {
 		<>
 			<Button
 				onPress={onOpen}
-				className="bg-transparent">
+				variant="bordered">
 				{error && "Error Fetching Location"}
 				{loading && <Loader2 className="animate-spin" />}
 				{location?.flag} {location?.country} | {location?.region}
@@ -51,7 +52,7 @@ const NavbarModal = () => {
 								Location Information
 							</ModalHeader>
 							<ModalBody>
-								<div className="grid grid-cols-2  gap-5">
+								<div className="grid grid-cols-2 gap-5">
 									{locationInfo.map((val, i) => (
 										<div
 											className="space-x-2 bg-default-100 rounded-md p-3"
@@ -64,6 +65,9 @@ const NavbarModal = () => {
 											</p>
 										</div>
 									))}
+								</div>
+								<div className="flex flex-col justify-center items-center">
+									<MethodDropdown />
 								</div>
 							</ModalBody>
 							<ModalFooter>
