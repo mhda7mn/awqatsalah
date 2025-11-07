@@ -3,11 +3,11 @@ import { Outlet } from "react-router";
 
 function Root() {
 	return (
-		<div>
-			<HeroUIProvider>
+		<HeroUIProvider>
+			<main className="text-foreground bg-background min-h-screen">
 				<Outlet />
-			</HeroUIProvider>
-		</div>
+			</main>
+		</HeroUIProvider>
 	);
 }
 
