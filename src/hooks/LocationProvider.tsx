@@ -19,7 +19,7 @@ export const LocationProvider = ({
 		} catch (err: unknown) {
 			setError(`Failed to fetch location data ${err}`);
 		} finally {
-			setLoading(true);
+			setLoading(false);
 		}
 	};
 

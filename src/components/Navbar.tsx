@@ -4,6 +4,7 @@ import {
 	NavbarContent,
 	NavbarItem,
 } from "@heroui/react";
+import NavbarModal from "./NavbarModal";
 
 const NavbarComponent = () => {
 	return (
@@ -14,7 +15,7 @@ const NavbarComponent = () => {
 			<NavbarContent
 				className="gap-4"
 				justify="center">
-				<p>Information</p>
+				<NavbarModal />
 			</NavbarContent>
 			<NavbarContent justify="end">
 				<NavbarItem>Theme</NavbarItem>
